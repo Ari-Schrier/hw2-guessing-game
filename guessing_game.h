@@ -55,7 +55,7 @@ int guess_number_loop(int target_number){
 
 int guessing_game(){
     int random_number = pick_number_in_range(1, 10);
-    random_number = guess_number_loop(5);
+    random_number = guess_number_loop(random_number);
     return random_number;
 }
 
