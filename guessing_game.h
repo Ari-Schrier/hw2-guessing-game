@@ -67,7 +67,7 @@ int start_game()
     printf("Welcome to my fiendishly difficult guessing game. I am the riddlemaster. You will lose!\n");
     int results [5];
     int i = 0;
-    while(i < 3){
+    while(i < 5){
         printf("\n********************ROUND %d********************\n",i + 1);
         results[i] = guessing_game();
         printf("Wow, you got it in %d guesses!\n", results[i]);
@@ -75,7 +75,7 @@ int start_game()
     }
     printf("Thanks for playing! \nHere are your results: \n");
     i = 0;
-    while(i < 3){
+    while(i < 5){
         printf("Round %d took you %d guesses.\n", i + 1, results[i]);
         i++;
     }
