@@ -1,3 +1,4 @@
+.nfs*
 # common IDE directories
 .vscode/*
 !.vscode/settings.json

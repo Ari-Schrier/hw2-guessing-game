@@ -24,21 +24,61 @@ int pick_number_in_range(int low_value, int high_value){
     return random_number;
 }
 
-int guess_number_loop(int target_number){
-    int guesses_used = 0;
-    for 
+int get_user_input(){
+    int guessed_number;
+    printf("Please enter a number between one and ten: ");
+    scanf("%d", &guessed_number);
+    return guessed_number;
 }
 
+const char* offer_hint(int guessed_number, int target_number){
+    if(guessed_number > target_number){
+        return "Your guess was too high.\n";
+    }
+    return "Your guess was too low.\n";
+}
+
+int guess_number_loop(int target_number){
+    int guesses_used = 0;
+    int game_is_running = 1;
+    while(game_is_running == 1){
+        guesses_used ++;
+        int guessed_number = get_user_input();
+        if(guessed_number == target_number){
+            game_is_running = 0;
+        }else{
+            printf("%s\n",offer_hint(guessed_number, target_number));
+        }
+    }
+    return guesses_used;
+}
+
+int guessing_game(){
+    int random_number = pick_number_in_range(1, 10);
+    random_number = guess_number_loop(5);
+    return random_number;
+}
 
 /** Start location for the guessing game - this must
  * remain the starting point. DO NOT reset the random seed.
  */
 int start_game()
 {
-    printf("Lookit me! Talking to a computer!\n");
-    int random_number = pick_number_in_range(1, 10);
-    printf("I rolled a %d!\n", random_number);
-
+    printf("Welcome to my fiendishly difficult guessing game. I am the riddlemaster. You will lose!\n");
+    int results [5];
+    int i = 0;
+    while(i < 3){
+        printf("\n********************ROUND %d********************\n",i + 1);
+        results[i] = guessing_game();
+        printf("Wow, you got it in %d guesses!\n", results[i]);
+        i ++;
+    }
+    printf("Thanks for playing! \nHere are your results: \n");
+    i = 0;
+    while(i < 3){
+        printf("Round %d took you %d guesses.\n", i + 1, results[i]);
+        i++;
+    }
     return 0; // returns 0 if game ran validly
 }
 
