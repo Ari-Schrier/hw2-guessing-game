@@ -16,8 +16,12 @@
 #include "guessing_game.h"  
 
 /** replace with your own unit tests / functions **/
-int test_one() {
-    // run a unit test
+int test_pick_number_in_range() {
+    // should return 4
+    int testvariable = pick_number_in_range(1, 10);
+    int controlvariable = 4;
+    printf("Testing pick_number_in_range...");
+    printf("Does %d equal %d?", testvariable, controlvariable);
 
     return 0; // if there weren't errors
 }
@@ -79,7 +83,7 @@ int main(int argc, char *argv[]) {
         }
     }else {
         int errors = 0;
-        errors += test_one();
+        errors += test_pick_number_in_range();
         // add more tests here
         printf("\n**Fail %d unit tests.**\n", errors);
         return 0; 

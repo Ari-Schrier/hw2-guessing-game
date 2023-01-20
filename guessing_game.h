@@ -62,7 +62,7 @@ returns: a string containing a message indicating if the
 guessed number was larger or smaller than the target number
 
 */
-const char* offer_hint(int guessed_number, int target_number){
+char* offer_hint(int guessed_number, int target_number){
     if(guessed_number > target_number){
         return "Your guess was too high.\n";
     }
