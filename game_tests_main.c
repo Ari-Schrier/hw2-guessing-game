@@ -15,14 +15,36 @@
 
 #include "guessing_game.h"  
 
-/** replace with your own unit tests / functions **/
+/** Test function for pick_number_in_range() **/
 int test_pick_number_in_range() {
-    // should return 4
     int testvariable = pick_number_in_range(1, 10);
     int controlvariable = 4;
-    printf("Testing pick_number_in_range...");
-    printf("Does %d equal %d?", testvariable, controlvariable);
+    if (testvariable != controlvariable){
+        return 1;
+    }
 
+    return 0; // if there weren't errors
+}
+
+/** Test function for get_user_input() **/
+int test_get_user_input() {
+    //TODO: Figure out how to write a test function for this
+
+    return 0; // if there weren't errors
+}
+
+/** Test function for offer_hint() **/
+int test_offer_hint() {
+    char* testvariable = offer_hint(1, 5);
+    char* controlvariable = "Your guess was too low.\n";
+    if (testvariable != controlvariable){
+        return 1;
+    }
+    testvariable = offer_hint(1000, 5);
+    controlvariable = "Your guess was too high.\n";
+    if (testvariable != controlvariable){
+        return 1;
+    }
     return 0; // if there weren't errors
 }
 
@@ -84,6 +106,8 @@ int main(int argc, char *argv[]) {
     }else {
         int errors = 0;
         errors += test_pick_number_in_range();
+        errors += test_get_user_input();
+        errors += test_offer_hint();
         // add more tests here
         printf("\n**Fail %d unit tests.**\n", errors);
         return 0; 
