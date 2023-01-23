@@ -1,7 +1,7 @@
 /*  ========== H02 - Guessing Game ============
  *
- *   Student: UPDATE
- *   Semester: UPDATE
+ *   Student: Aidan Schrier
+ *   Semester: Spring 2023
  *
  *   This file builds the foundation for a 'testing' framework for the game
  *   You will want to build unit tests in this file, and run them. 
